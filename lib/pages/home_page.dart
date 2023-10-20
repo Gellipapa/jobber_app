@@ -4,6 +4,7 @@ import 'package:todo_app/components/dialog_container.dart';
 import 'package:todo_app/components/todo_container.dart';
 import 'package:todo_app/data/database.dart';
 import 'package:todo_app/pages/add_new_client_page.dart';
+import 'package:todo_app/util/localization.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -93,7 +94,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.blue[200],
       appBar: AppBar(
-        title: Text('TO DO'),
+        title: Text(context.loc.helloWorld),
         elevation: 0,
       ),
       floatingActionButton: FloatingActionButton(
