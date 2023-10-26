@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/components/button_container.dart';
+import 'package:todo_app/util/localization.dart';
 
 class DialogContainer extends StatelessWidget {
   final controller;
@@ -17,20 +18,17 @@ class DialogContainer extends StatelessWidget {
     return AlertDialog(
       backgroundColor: Colors.blue,
       content: Container(
-          height: 120,
+          height: 75,
           child: Column(
             children: [
-              TextField(
-                controller: controller,
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(), hintText: "Add a new task"),
-              ),
+              Center(child: Text(loc.dialogLeaveMessage)),
+              SizedBox(height: 5.0),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  ButtonContainer(text: "Save", onPressed: onSave),
+                  ButtonContainer(text: loc.dialogYes, onPressed: onSave),
                   const SizedBox(width: 8),
-                  ButtonContainer(text: "Cancel", onPressed: onCancel)
+                  ButtonContainer(text: loc.dialogCancel, onPressed: onCancel)
                 ],
               )
             ],

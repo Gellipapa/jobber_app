@@ -8,9 +8,13 @@ class AddNewClientPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green[200],
+        backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text(context.loc.test),
+          title: Center(
+            child: Text(
+              context.loc.newClientTitle,
+            ),
+          ),
           elevation: 0,
         ),
         body: FormContainer());

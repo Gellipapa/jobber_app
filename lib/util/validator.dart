@@ -1,3 +1,5 @@
+import 'package:todo_app/util/localization.dart';
+
 enum ValidatorType { REQUIRED, MINMAX, REGEX, NO_VALIDATOR }
 
 class AllValidators {
@@ -85,7 +87,7 @@ class Validators {
 
   String? requiredValidator() {
     if (value == null || value!.isEmpty) {
-      return "EMPTRY";
+      return loc.emailPlaceholder;
     }
 
     return null;

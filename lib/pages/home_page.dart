@@ -69,6 +69,27 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onTaped(int index) {
+    void changePage() {
+      setState(() {
+        _currentIndex = index;
+      });
+      Navigator.of(context).pop();
+    }
+
+    if (_currentIndex == 1) {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return DialogContainer(
+            controller: _controller,
+            onSave: changePage,
+            onCancel: () => Navigator.of(context).pop(),
+          );
+        },
+      );
+      return;
+    }
+
     setState(() {
       _currentIndex = index;
     });
@@ -88,15 +109,11 @@ class _HomePageState extends State<HomePage> {
             );
           }),
       AddNewClientPage(),
-      Center(child: Text('Schedule')),
+      Center(child: Text(loc.schedulePage)),
     ];
 
     return Scaffold(
       backgroundColor: Colors.blue[200],
-      appBar: AppBar(
-        title: Text(context.loc.helloWorld),
-        elevation: 0,
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           createNewTask();
@@ -108,10 +125,10 @@ class _HomePageState extends State<HomePage> {
         onTap: onTaped,
         currentIndex: _currentIndex,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.work), label: "Works"),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: loc.homePage),
+          BottomNavigationBarItem(icon: Icon(Icons.work), label: loc.workPage),
           BottomNavigationBarItem(
-              icon: Icon(Icons.schedule), label: "Schedule"),
+              icon: Icon(Icons.schedule), label: loc.schedulePage),
         ],
       ),
     );
