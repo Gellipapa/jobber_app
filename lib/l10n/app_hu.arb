@@ -1,4 +1,17 @@
 {
-  "helloWorld": "Hello World3!",
-  "test": "Hello TEST2!"
+  "mainTitle": "JOBBER APP!",
+  "newClientTitle": "Ügyfél felvétel",
+  "firstNamePlaceholder": "Add meg a vezetéknevet ...",
+  "lastNamePlaceholder": "Add meg a keresztnevet ...",
+  "companyNamePlaceholder": "Add meg a cég nevét ...",
+  "phoneNumberPlaceholder": "Add meg a telefonszámot ...",
+  "emailPlaceholder": "Add meg a az email címet ...",
+  "addressPlaceholder": "Add meg a lakcímet ...",
+  "submitButtonText": "Felvétel",
+  "dialogLeaveMessage": "Biztos kilépsz?",
+  "dialogYes": "Igen",
+  "dialogCancel": "Mégsem",
+  "homePage": "Kezdőlap",
+  "workPage": "Munkalap",
+  "schedulePage": "Menetrend"
 }
